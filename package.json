@@ -1,0 +1,37 @@
+{
+	"name": "cashew-server",
+	"version": "1.0.0",
+	"main": "./src/server.js",
+	"license": "MIT",
+	"type": "module",
+	"dependencies": {
+		"better-logging": "^5.0.0",
+		"compression": "^1.8.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.7",
+		"express": "^4.21.2",
+		"express-async-handler": "^1.2.0",
+		"extensionless": "^1.9.9",
+		"face-api.js": "^0.22.2",
+		"helmet": "^8.1.0",
+		"mongodb": "^6.15.0",
+		"mongoose": "^8.13.0",
+		"multer": "^1.4.5-lts.2",
+		"nodemon": "^3.1.9",
+		"yup": "^1.6.1"
+	},
+	"devDependencies": {
+		"prettier": "^3.5.3"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"engineStrict": true,
+	"scripts": {
+		"dev": "nodemon --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"extensionless\", pathToFileURL(\"./\"));' src/server.js",
+		"start": "node --quiet--import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"extensionless\", pathToFileURL(\"./\"));' src/server.js",
+		"format": "prettier --write \"**/*.{js,json,css,md}\"",
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+		"tree": "tree -I 'node_modules|dist|coverage|.git'"
+	}
+}
