@@ -37,6 +37,7 @@ app.use(
 
 app.use('/api/v1', appRouter);
 
+app.use('*', ErrorController.notFound);
 app.use(ErrorController.globalError);
 
 connect()
