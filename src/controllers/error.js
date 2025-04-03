@@ -1,4 +1,5 @@
 import { failure } from '../utils';
+import { ENV } from '../config';
 /**
  * Middleware to handle unmatched routes (Not Found).
  *
@@ -33,7 +34,7 @@ const globalError = (error, req, res, next) => {
 		statusCode,
 		message: error.message,
 		errors: error.errors || null,
-		details: process.env.NODE_ENV === 'production' ? null : error.stack,
+		details: ENV.NODE_ENV === 'production' ? null : error.stack,
 	});
 };
 

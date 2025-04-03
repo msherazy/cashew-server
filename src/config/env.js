@@ -12,6 +12,8 @@ const getEnvVar = (name, required = true) => {
 dotenv.config();
 
 const PORT = Number(getEnvVar('PORT', false) || 3000);
+const NODE_ENV = String(getEnvVar('NODE_ENV', false) || 'production');
+
 const DB_URI = getEnvVar('DB_URI');
 const DB_NAME = getEnvVar('DB_NAME');
 const ALLOWED_ORIGINS = getEnvVar('ALLOWED_ORIGINS')?.split(',');
@@ -23,4 +25,5 @@ export const ENV = {
 	DB_NAME,
 	ALLOWED_ORIGINS,
 	UPLOAD_PATH,
+	NODE_ENV,
 };

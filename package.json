@@ -29,7 +29,7 @@
 	"engineStrict": true,
 	"scripts": {
 		"dev": "nodemon --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"extensionless\", pathToFileURL(\"./\"));' src/server.js",
-		"start": "node --quiet--import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"extensionless\", pathToFileURL(\"./\"));' src/server.js",
+		"start": "node --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"extensionless\", pathToFileURL(\"./\"));' src/server.js",
 		"format": "prettier --write \"**/*.{js,json,css,md}\"",
 		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
 		"tree": "tree -I 'node_modules|dist|coverage|.git'"
