@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { ENV } from '../config';
 import { User } from '../models';
+import { ulid } from 'ulid';
 
 export class UserService {
 	constructor(req) {
@@ -12,8 +13,9 @@ export class UserService {
 		const { body, files } = this.req;
 		const { firstName, lastName, email, phoneNumber, idFrontData, idBackData } = body;
 
-		const newFrontFileName = `${idFrontData.number}-front.jpg`;
-		const newBackFileName = `${idFrontData.number}-back.jpg`;
+		const uniqueId = ulid();
+		const newFrontFileName = `${idFrontData.number}-front-${uniqueId}.jpg`;
+		const newBackFileName = `${idFrontData.number}-${uniqueId}.jpg`;
 
 		const frontFile = files.front && files.front[0];
 		const backFile = files.back && files.back[0];
