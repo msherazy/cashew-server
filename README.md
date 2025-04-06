@@ -39,7 +39,6 @@ The source code for this project is available on GitHub: [Cashew Server](https:/
 	  ```bash
 		git clone https://github.com/msherazy/cashew-server.git
 		cd cashew-server
-		```
 
 2. Install dependencies:
 	  ```bash
@@ -53,7 +52,6 @@ The source code for this project is available on GitHub: [Cashew Server](https:/
 		ALLOWED_ORIGINS=
 		UPLOAD_PATH=
 		NODE_ENV=
-		```
 
 ### Running the Application
 
@@ -61,6 +59,14 @@ To start the server, run:
 ```bash
 yarn start
    ```
+
+## API Endpoints
+
+### Authentication
+
+- `GET /auth/` - Fetch user information
+- `POST /auth/register` - Register a new user with front and back image uploads
+
 ## Project Structure
 
 ```sh
@@ -108,3 +114,5 @@ yarn start
 │   ├── 784-2023-0000000-0-back-01JR0JYZWCDQC4B8815AYMC1J7.jpg
 │   └── 784-2023-0000000-0-front-01JR0JYZWCDQC4B8815AYMC1J7.jpg
 └── yarn.lock
+
+`
